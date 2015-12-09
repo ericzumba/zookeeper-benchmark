@@ -52,7 +52,12 @@ java -cp ../target/lib/*:../target/* edu.brown.cs.zkbenchmark.ZooKeeperBenchmark
 
 # Optionally, plot some graphs
 if [ "`which gnuplot`" != "" ] && [ "$USE_GNUPLOT" == "--gnuplot" ]; then
-    gnuplot ../all.plot
+    # gnuplot ../all.plot
+    gnuplot ../create.plot
+    gnuplot ../delete.plot
+    gnuplot ../read.plot
+    gnuplot ../setmulti.plot
+    gnuplot ../setsingle.plot
 
     if [ "`which ps2pdf`" != "" ]; then
         for i in `ls -1 *.ps`; do
